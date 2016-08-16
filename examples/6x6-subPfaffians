@@ -1,0 +1,31 @@
+{c*i*n - a*l*s+a*m*q-a*n*p+b*h*s-b*i*q+b*
+j*p-c*g*s-c*j*m+d*g*q-d*h*n+d*j*l-e*g*p
++e*h*m-e*i*l,
+
+c*i*o - a*l*t+a*m*r-a*o*p+b*h*t-b*i*r+b*
+k*p-c*g*t-c*k*m+d*g*r-d*h*o+d*k*l-f*g*p
++f*h*m-f*i*l,
+
+c*j*o - a*l*u+a*n*r-a*o*q+b*h*u-b*j*r+b*
+k*q-c*g*u-c*k*n+e*g*r-e*h*o+e*k*l-f*g*q
++f*h*n-f*j*l,
+
+d*j*o + a*m*u-a*n*t+a*o*s-b*i*u+b*j*t-b*
+k*s+d*g*u-2*d*j*o+d*k*n-e*g*t+e*i*o-e*k*
+m+f*g*s-f*i*n+f*j*m,
+
+d*j*r + a*p*u-a*q*t+a*r*s-c*i*u+c*j*t-c*
+k*s+d*h*u-2*d*j*r+d*k*q-e*h*t+e*i*r-e*k*
+p+f*h*s-f*i*q+f*j*p,
+
+d*n*r + b*p*u-b*q*t+b*r*s-c*m*u+c*n*t-c*
+o*s+d*l*u-2*d*n*r+d*o*q-e*l*t+e*m*r-e*o*
+p+f*l*s-f*m*q+f*n*p,
+
+i*n*r - g*p*u+g*q*t-g*r*s+h*m*u-h*n*t+h*
+o*s-i*l*u-i*o*q+j*l*t-j*m*r+j*o*p-k*l*s
++k*m*q-k*n*p
+}
+{
+(1,2,3,4,5,0,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
+}

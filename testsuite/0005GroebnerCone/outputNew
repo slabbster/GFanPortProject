@@ -1,0 +1,24 @@
+_application PolyhedralCone
+_version 2.2
+_type PolyhedralCone
+
+AMBIENT_DIM
+3
+
+DIM
+3
+
+IMPLIED_EQUATIONS
+
+LINEALITY_DIM
+0
+
+LINEALITY_SPACE
+
+FACETS
+0 0 1
+0 1 -11
+1 0 -9
+
+RELATIVE_INTERIOR_POINT
+10 12 1

@@ -1,0 +1,1 @@
+gfan _overintegers --groebnerFan |grep F_VECTOR

@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+
+\bibitem{avis}
+David Avis and Komei Fukuda.
+\newblock A basis enumeration algorithm for convex hulls and vertex enumeration
+  of arrangements and polyhedra.
+\newblock {\em Discrete Computational Geometry}, 8:295--313, 1992.
+
+\bibitem{collart}
+St{\'e}phane Collart, Michael Kalkbrener, and Daniel Mall.
+\newblock Converting bases with the {G}r{\"o}bner walk.
+\newblock {\em J. Symb. Comput.}, 24(3/4):465--469, 1997.
+
+\bibitem{cdd}
+Komei Fukuda.
+\newblock {\em cddlib reference manual, cddlib Version 093b}.
+\newblock Swiss Federal Institute of Technology, Lausanne and Z{\"u}rich,
+  Switzerland, 2003.
+\newblock
+  \htmladdnormallink{http://www.ifor.math.ethz.ch/\~{}fukuda/cdd\_home/cdd.htm%
+l} {http://www.ifor.math.ethz.ch/\~{}fukuda/cdd\_home/cdd.html}.
+
+\bibitem{fukuda}
+Komei Fukuda, Anders Jensen, and Rekha Thomas.
+\newblock Computing {G}r{\"o}bner fans.
+\newblock In preparation.
+
+\bibitem{gmp}
+Torbj{\"o}rn {Granlund et al.}
+\newblock {GNU} multiple precision arithmetic library 4.1.2, December 2002.
+\newblock \url{http://swox.com/gmp/}.
+
+\bibitem{huber}
+Birkett Huber and Rekha~R. Thomas.
+\newblock Computing {G}r{\"o}bner fans of toric ideals.
+\newblock {\em Experimental Mathematics}, 9(3/4):321--331, 2000.
+
+\bibitem{cats}
+Anders Jensen.
+\newblock {CaTS}, a software system for toric state polytopes.
+\newblock Available at {http://www.soopadoopa.dk/anders/cats/cats.html}.
+
+\bibitem{jensen}
+Anders Jensen.
+\newblock A non-regular {G}r{\"o}bner fan.
+\newblock 2005.
+\newblock math.CO/0501352.
+
+\bibitem{MoRo}
+Teo Mora and Lorenzo Robbiano.
+\newblock The {G}r{\"o}bner fan of an ideal.
+\newblock {\em J. Symb. Comput.}, 6(2/3):183--208, 1988.
+
+\end{thebibliography}

@@ -1,0 +1,82 @@
+(d*h*l*p - c*i*l*p - d*g*m*p + b*i*m*p + c*g*n*p - b*h*n*p - d*h*k*q + c*i*k*q
++ d*f*m*q - a*i*m*q - c*f*n*q + a*h*n*q + d*g*k*r - b*i*k*r - d*f*l*r + a*i*l*r +
+b*f*n*r - a*g*n*r - c*g*k*s + b*h*k*s + c*f*l*s - a*h*l*s - b*f*m*s + a*g*m*s,
+e*h*l*p - c*j*l*p - e*g*m*p + b*j*m*p + c*g*o*p - b*h*o*p - e*h*k*q + c*j*k*q +
+e*f*m*q - a*j*m*q - c*f*o*q + a*h*o*q + e*g*k*r - b*j*k*r - e*f*l*r + a*j*l*r +
+b*f*o*r - a*g*o*r - c*g*k*t + b*h*k*t + c*f*l*t - a*h*l*t - b*f*m*t + a*g*m*t,
+e*i*l*p - d*j*l*p - e*g*n*p + b*j*n*p + d*g*o*p - b*i*o*p - e*i*k*q + d*j*k*q +
+e*f*n*q - a*j*n*q - d*f*o*q + a*i*o*q + e*g*k*s - b*j*k*s - e*f*l*s + a*j*l*s +
+b*f*o*s - a*g*o*s - d*g*k*t + b*i*k*t + d*f*l*t - a*i*l*t - b*f*n*t + a*g*n*t,
+e*i*m*p - d*j*m*p - e*h*n*p + c*j*n*p + d*h*o*p - c*i*o*p - e*i*k*r + d*j*k*r +
+e*f*n*r - a*j*n*r - d*f*o*r + a*i*o*r + e*h*k*s - c*j*k*s - e*f*m*s + a*j*m*s +
+c*f*o*s - a*h*o*s - d*h*k*t + c*i*k*t + d*f*m*t - a*i*m*t - c*f*n*t + a*h*n*t,
+e*i*m*q - d*j*m*q - e*h*n*q + c*j*n*q + d*h*o*q - c*i*o*q - e*i*l*r + d*j*l*r +
+e*g*n*r - b*j*n*r - d*g*o*r + b*i*o*r + e*h*l*s - c*j*l*s - e*g*m*s + b*j*m*s +
+c*g*o*s - b*h*o*s - d*h*l*t + c*i*l*t + d*g*m*t - b*i*m*t - c*g*n*t + b*h*n*t,
+d*h*l*u - c*i*l*u - d*g*m*u + b*i*m*u + c*g*n*u - b*h*n*u - d*h*k*v + c*i*k*v +
+d*f*m*v - a*i*m*v - c*f*n*v + a*h*n*v + d*g*k*w - b*i*k*w - d*f*l*w + a*i*l*w +
+b*f*n*w - a*g*n*w - c*g*k*x + b*h*k*x + c*f*l*x - a*h*l*x - b*f*m*x + a*g*m*x,
+e*h*l*u - c*j*l*u - e*g*m*u + b*j*m*u + c*g*o*u - b*h*o*u - e*h*k*v + c*j*k*v +
+e*f*m*v - a*j*m*v - c*f*o*v + a*h*o*v + e*g*k*w - b*j*k*w - e*f*l*w + a*j*l*w +
+b*f*o*w - a*g*o*w - c*g*k*y + b*h*k*y + c*f*l*y - a*h*l*y - b*f*m*y + a*g*m*y,
+e*i*l*u - d*j*l*u - e*g*n*u + b*j*n*u + d*g*o*u - b*i*o*u - e*i*k*v + d*j*k*v +
+e*f*n*v - a*j*n*v - d*f*o*v + a*i*o*v + e*g*k*x - b*j*k*x - e*f*l*x + a*j*l*x +
+b*f*o*x - a*g*o*x - d*g*k*y + b*i*k*y + d*f*l*y - a*i*l*y - b*f*n*y + a*g*n*y,
+e*i*m*u - d*j*m*u - e*h*n*u + c*j*n*u + d*h*o*u - c*i*o*u - e*i*k*w + d*j*k*w +
+e*f*n*w - a*j*n*w - d*f*o*w + a*i*o*w + e*h*k*x - c*j*k*x - e*f*m*x + a*j*m*x +
+c*f*o*x - a*h*o*x - d*h*k*y + c*i*k*y + d*f*m*y - a*i*m*y - c*f*n*y + a*h*n*y,
+e*i*m*v - d*j*m*v - e*h*n*v + c*j*n*v + d*h*o*v - c*i*o*v - e*i*l*w + d*j*l*w +
+e*g*n*w - b*j*n*w - d*g*o*w + b*i*o*w + e*h*l*x - c*j*l*x - e*g*m*x + b*j*m*x +
+c*g*o*x - b*h*o*x - d*h*l*y + c*i*l*y + d*g*m*y - b*i*m*y - c*g*n*y + b*h*n*y,
+d*h*q*u - c*i*q*u - d*g*r*u + b*i*r*u + c*g*s*u - b*h*s*u - d*h*p*v + c*i*p*v +
+d*f*r*v - a*i*r*v - c*f*s*v + a*h*s*v + d*g*p*w - b*i*p*w - d*f*q*w + a*i*q*w +
+b*f*s*w - a*g*s*w - c*g*p*x + b*h*p*x + c*f*q*x - a*h*q*x - b*f*r*x + a*g*r*x,
+e*h*q*u - c*j*q*u - e*g*r*u + b*j*r*u + c*g*t*u - b*h*t*u - e*h*p*v + c*j*p*v +
+e*f*r*v - a*j*r*v - c*f*t*v + a*h*t*v + e*g*p*w - b*j*p*w - e*f*q*w + a*j*q*w +
+b*f*t*w - a*g*t*w - c*g*p*y + b*h*p*y + c*f*q*y - a*h*q*y - b*f*r*y + a*g*r*y,
+e*i*q*u - d*j*q*u - e*g*s*u + b*j*s*u + d*g*t*u - b*i*t*u - e*i*p*v + d*j*p*v +
+e*f*s*v - a*j*s*v - d*f*t*v + a*i*t*v + e*g*p*x - b*j*p*x - e*f*q*x + a*j*q*x +
+b*f*t*x - a*g*t*x - d*g*p*y + b*i*p*y + d*f*q*y - a*i*q*y - b*f*s*y + a*g*s*y,
+e*i*r*u - d*j*r*u - e*h*s*u + c*j*s*u + d*h*t*u - c*i*t*u - e*i*p*w + d*j*p*w +
+e*f*s*w - a*j*s*w - d*f*t*w + a*i*t*w + e*h*p*x - c*j*p*x - e*f*r*x + a*j*r*x +
+c*f*t*x - a*h*t*x - d*h*p*y + c*i*p*y + d*f*r*y - a*i*r*y - c*f*s*y + a*h*s*y,
+e*i*r*v - d*j*r*v - e*h*s*v + c*j*s*v + d*h*t*v - c*i*t*v - e*i*q*w + d*j*q*w +
+e*g*s*w - b*j*s*w - d*g*t*w + b*i*t*w + e*h*q*x - c*j*q*x - e*g*r*x + b*j*r*x +
+c*g*t*x - b*h*t*x - d*h*q*y + c*i*q*y + d*g*r*y - b*i*r*y - c*g*s*y + b*h*s*y,
+d*m*q*u - c*n*q*u - d*l*r*u + b*n*r*u + c*l*s*u - b*m*s*u - d*m*p*v + c*n*p*v +
+d*k*r*v - a*n*r*v - c*k*s*v + a*m*s*v + d*l*p*w - b*n*p*w - d*k*q*w + a*n*q*w +
+b*k*s*w - a*l*s*w - c*l*p*x + b*m*p*x + c*k*q*x - a*m*q*x - b*k*r*x + a*l*r*x,
+e*m*q*u - c*o*q*u - e*l*r*u + b*o*r*u + c*l*t*u - b*m*t*u - e*m*p*v + c*o*p*v +
+e*k*r*v - a*o*r*v - c*k*t*v + a*m*t*v + e*l*p*w - b*o*p*w - e*k*q*w + a*o*q*w +
+b*k*t*w - a*l*t*w - c*l*p*y + b*m*p*y + c*k*q*y - a*m*q*y - b*k*r*y + a*l*r*y,
+e*n*q*u - d*o*q*u - e*l*s*u + b*o*s*u + d*l*t*u - b*n*t*u - e*n*p*v + d*o*p*v +
+e*k*s*v - a*o*s*v - d*k*t*v + a*n*t*v + e*l*p*x - b*o*p*x - e*k*q*x + a*o*q*x +
+b*k*t*x - a*l*t*x - d*l*p*y + b*n*p*y + d*k*q*y - a*n*q*y - b*k*s*y + a*l*s*y,
+e*n*r*u - d*o*r*u - e*m*s*u + c*o*s*u + d*m*t*u - c*n*t*u - e*n*p*w + d*o*p*w +
+e*k*s*w - a*o*s*w - d*k*t*w + a*n*t*w + e*m*p*x - c*o*p*x - e*k*r*x + a*o*r*x +
+c*k*t*x - a*m*t*x - d*m*p*y + c*n*p*y + d*k*r*y - a*n*r*y - c*k*s*y + a*m*s*y,
+e*n*r*v - d*o*r*v - e*m*s*v + c*o*s*v + d*m*t*v - c*n*t*v - e*n*q*w + d*o*q*w +
+e*l*s*w - b*o*s*w - d*l*t*w + b*n*t*w + e*m*q*x - c*o*q*x - e*l*r*x + b*o*r*x +
+c*l*t*x - b*m*t*x - d*m*q*y + c*n*q*y + d*l*r*y - b*n*r*y - c*l*s*y + b*m*s*y,
+i*m*q*u - h*n*q*u - i*l*r*u + g*n*r*u + h*l*s*u - g*m*s*u - i*m*p*v + h*n*p*v +
+i*k*r*v - f*n*r*v - h*k*s*v + f*m*s*v + i*l*p*w - g*n*p*w - i*k*q*w + f*n*q*w +
+g*k*s*w - f*l*s*w - h*l*p*x + g*m*p*x + h*k*q*x - f*m*q*x - g*k*r*x + f*l*r*x,
+j*m*q*u - h*o*q*u - j*l*r*u + g*o*r*u + h*l*t*u - g*m*t*u - j*m*p*v + h*o*p*v +
+j*k*r*v - f*o*r*v - h*k*t*v + f*m*t*v + j*l*p*w - g*o*p*w - j*k*q*w + f*o*q*w +
+g*k*t*w - f*l*t*w - h*l*p*y + g*m*p*y + h*k*q*y - f*m*q*y - g*k*r*y + f*l*r*y,
+j*n*q*u - i*o*q*u - j*l*s*u + g*o*s*u + i*l*t*u - g*n*t*u - j*n*p*v + i*o*p*v +
+j*k*s*v - f*o*s*v - i*k*t*v + f*n*t*v + j*l*p*x - g*o*p*x - j*k*q*x + f*o*q*x +
+g*k*t*x - f*l*t*x - i*l*p*y + g*n*p*y + i*k*q*y - f*n*q*y - g*k*s*y + f*l*s*y,
+j*n*r*u - i*o*r*u - j*m*s*u + h*o*s*u + i*m*t*u - h*n*t*u - j*n*p*w + i*o*p*w +
+j*k*s*w - f*o*s*w - i*k*t*w + f*n*t*w + j*m*p*x - h*o*p*x - j*k*r*x + f*o*r*x +
+h*k*t*x - f*m*t*x - i*m*p*y + h*n*p*y + i*k*r*y - f*n*r*y - h*k*s*y + f*m*s*y,
+j*n*r*v - i*o*r*v - j*m*s*v + h*o*s*v + i*m*t*v - h*n*t*v - j*n*q*w + i*o*q*w +
+j*l*s*w - g*o*s*w - i*l*t*w + g*n*t*w + j*m*q*x - h*o*q*x - j*l*r*x + g*o*r*x +
+h*l*t*x - g*m*t*x - i*m*q*y + h*n*q*y + i*l*r*y - g*n*r*y - h*l*s*y + g*m*s*y)
+{
+(1,0,2,3,4,6,5,7,8,9,11,10,12,13,14,16,15,17,18,19,21,20,22,23,24),
+(1,2,3,4,0,6,7,8,9,5,11,12,13,14,10,16,17,18,19,15,21,22,23,24,20),
+(0,5,10,15,20,1,6,11,16,21,2,7,12,17,22,3,8,13,18,23,4,9,14,19,24),
+(5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4),
+(0,5,10,15,20,1,6,11,16,21,2,7,12,17,22,3,8,13,18,23,4,9,14,19,24)}
+(5,6,7,8,9,0,1,2,3,4,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24),

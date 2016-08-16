@@ -1,0 +1,8 @@
+{
+c*f-b*g,
+a*g-d*g,
+a*f-d*f}
+{
+c*f-b*g,
+a*g-d*g+c*h-c*e,
+a*f-d*f+b*h-b*e}

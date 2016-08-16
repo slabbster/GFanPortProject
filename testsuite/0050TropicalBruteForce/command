@@ -1,0 +1,1 @@
+%s _buchberger | %s _tropicalbruteforce |grep F_VECTOR -A1

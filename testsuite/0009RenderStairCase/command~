@@ -1,0 +1,1 @@
+%s --symmetry <%s | %s _renderstaircase -m -w6 -d16

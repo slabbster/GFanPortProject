@@ -1,0 +1,9 @@
+(d*h*l*p - c*i*l*p - d*g*m*p + b*i*m*p + c*g*n*p - b*h*n*p - d*h*k*q + c*i*k*q + d*f*m*q - a*i*m*q - c*f*n*q + a*h*n*q + d*g*k*r - b*i*k*r - d*f*l*r + a*i*l*r + b*f*n*r - a*g*n*r - c*g*k*s + b*h*k*s + c*f*l*s - a*h*l*s - b*f*m*s + a*g*m*s,
+ e*h*l*p - c*j*l*p - e*g*m*p + b*j*m*p + c*g*o*p - b*h*o*p - e*h*k*q + c*j*k*q + e*f*m*q - a*j*m*q - c*f*o*q + a*h*o*q + e*g*k*r - b*j*k*r - e*f*l*r + a*j*l*r + b*f*o*r - a*g*o*r - c*g*k*t + b*h*k*t + c*f*l*t - a*h*l*t - b*f*m*t + a*g*m*t,
+ e*i*l*p - d*j*l*p - e*g*n*p + b*j*n*p + d*g*o*p - b*i*o*p - e*i*k*q + d*j*k*q + e*f*n*q - a*j*n*q - d*f*o*q + a*i*o*q + e*g*k*s - b*j*k*s - e*f*l*s + a*j*l*s + b*f*o*s - a*g*o*s - d*g*k*t + b*i*k*t + d*f*l*t - a*i*l*t - b*f*n*t + a*g*n*t,
+ e*i*m*p - d*j*m*p - e*h*n*p + c*j*n*p + d*h*o*p - c*i*o*p - e*i*k*r + d*j*k*r + e*f*n*r - a*j*n*r - d*f*o*r + a*i*o*r + e*h*k*s - c*j*k*s - e*f*m*s + a*j*m*s + c*f*o*s - a*h*o*s - d*h*k*t + c*i*k*t + d*f*m*t - a*i*m*t - c*f*n*t + a*h*n*t,
+ e*i*m*q - d*j*m*q - e*h*n*q + c*j*n*q + d*h*o*q - c*i*o*q - e*i*l*r + d*j*l*r + e*g*n*r - b*j*n*r - d*g*o*r + b*i*o*r + e*h*l*s - c*j*l*s - e*g*m*s + b*j*m*s + c*g*o*s - b*h*o*s - d*h*l*t + c*i*l*t + d*g*m*t - b*i*m*t - c*g*n*t + b*h*n*t}
+{(1,0,2,3,4,6,5,7,8,9,11,10,12,13,14,16,15,17,18,19),
+(1,2,3,4,0,6,7,8,9,5,11,12,13,14,10,16,17,18,19,15),
+(5,6,7,8,9,0,1,2,3,4,10,11,12,13,14,15,16,17,18,19),
+(5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,0,1,2,3,4)}

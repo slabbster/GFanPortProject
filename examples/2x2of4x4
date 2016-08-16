@@ -1,0 +1,17 @@
+{af-be,ag-ce,ah-de,bg-cf,bh-df,ch-dg,
+aj-bi,ak-ci,al-di,bk-cj,bl-dj,cl-dk,
+an-bm,ao-cm,ap-dm,bo-cn,bp-dn,cp-do,
+ej-fi,ek-gi,el-hi,fk-gj,fl-hj,gl-hk,
+en-fm,eo-gm,ep-hm,fo-gn,fp-hn,gp-ho,
+in-jm,io-km,ip-lm,jo-kn,jp-ln,kp-lo}
+{
+(1,2,3,0,5,6,7,4,9,10,11,8,13,14,15,12),
+(1,0,2,3,5,4,6,7,9,8,10,11,13,12,14,15),
+(4,5,6,7,8,9,10,11,12,13,14,15,0,1,2,3),
+(4,5,6,7,0,1,2,3,8,9,10,11,12,13,14,15),
+(0,4,8,12,1,5,9,13,2,6,10,14,3,7,11,15)
+}
+a b c d
+e f g h
+i j k l
+m n o p

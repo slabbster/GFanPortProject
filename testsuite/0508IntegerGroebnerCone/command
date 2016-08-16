@@ -1,0 +1,1 @@
+gfan _overintegers --groebnerCone | grep N_RAYS -v | grep RAYS -A3 | sort

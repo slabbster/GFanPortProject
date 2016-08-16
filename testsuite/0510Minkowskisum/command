@@ -1,0 +1,1 @@
+%s _minkowskisum --symmetry | grep -A1 F_VECTOR

@@ -1,0 +1,1 @@
+%s <%s | %s _topolyhedralfan --symmetry |grep F_VECTOR -A1

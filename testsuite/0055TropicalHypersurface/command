@@ -1,0 +1,1 @@
+%s _tropicalhypersurface | grep -A1 F_VECTOR

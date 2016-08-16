@@ -1,0 +1,2 @@
+%s _padic --groebnerPolyhedron | grep -A1 F_VECTOR
+This is Example 2.4.3 in an early version of [Maclagan,Sturmfels] on Tropical Geometry.

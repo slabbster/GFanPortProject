@@ -1,0 +1,2 @@
+%s _secondaryfan | grep F_VECTOR -A1
+

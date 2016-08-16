@@ -1,0 +1,5 @@
+#!/bin/bash
+make -k  gmppath=/sw cddpath=../cddlib soplex=fjskjf singular=dskfjsladjfklas
+
+# compiling with SAGE:
+# make -k  PREFIX=/Users/anders/math/software/sage-4.3.2 cddpath=$SAGE_LOCAL singular=dskfjsladjfklas sagepath=$SAGE_LOCAL

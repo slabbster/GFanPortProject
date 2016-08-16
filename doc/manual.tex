@@ -1,0 +1,380 @@
+\include{defines}
+
+\def\name{Gfan }
+\def\nameversion{gfan0.5}
+\def\exename{gfan}
+
+
+\begin{document}
+
+\title{\name version 0.5: A User's Manual}
+\author{Anders Nedergaard Jensen
+\thanks{Research partially supported by the Faculty of Science, University of Aarhus, Danish Research Training Council (Forskeruddannelsesr\aa det, FUR) , Institute for Operations Research ETH, grants DMS 0222452 and DMS 0100141 of the U.S. National Science Foundation and the American Institute of Mathematics.
+}
+\\
+\\
+%\small
+%Department of Mathematical Sciences, University of Aarhus
+%and\\
+%\small
+%Institute for Operations Research, ETH Z\"urich
+}
+\maketitle
+
+\begin{abstract}
+  \name is a software package for computing Gr\"obner fans and
+  tropical varieties. These are polyhedral fans associated to
+  polynomial ideals. The maximal cones of a Gr\"obner fan are in
+  bijection with the marked reduced Gr\"obner bases of its defining
+  ideal. The software computes all marked reduced Gr\"obner bases of an ideal. Their
+  union is a universal Gr\"obner basis. The tropical
+  variety of a polynomial ideal is a certain subcomplex of the
+  Gr\"obner fan. \name contains algorithms for computing this complex
+  for general ideals and specialized algorithms for tropical curves,
+  tropical hypersurfaces and tropical varieties of prime ideals.  In
+  addition to the above core functions the package contains many tools
+  which are useful in the study of Gr\"obner bases, initial ideals and
+  tropical geometry.
+% Among these are an interactive traversal program
+%  for Gr\"obner fans and programs for graphical renderings.
+The full
+  list of commands can be found in Appendix~\ref{sec:applist}.  For
+  ordinary Gr\"obner basis computations \name is not competitive in
+  speed compared to programs such as CoCoA, Singular and Macaulay2.
+
+%whose main function is to enumerate all
+%  reduced Gr\"obner bases of a polynomial ideal. The reduced Gr\"obner bases yield the maximal cones in the Gr\"obner fan of the ideal. Several subcomputations can be issued and additional tools are included. Among these the highlights are:\\
+%\noindent $\bullet$ commands for computing tropical varieties.\\
+%  \noindent $\bullet$ \texttt{\exename\_interactive} which allows
+%  interactive walks in the Gr\"obner fan of an ideal,\\
+%  \noindent $\bullet$ commands for graphical renderings of Gr\"obner fans and monomial ideals.\\
+%    The full list of commands can be found in Section \ref{sec:applist}.
+  
+%  \name is a generalised version of the software \cite{cats} by the same author, but only little code is commen for the two projects.
+%  CaTS began as a re-implementation of TiGERS, a software package to
+%  compute state polytopes of toric ideals, written by Birkett Huber
+%  based on algorithms in \cite{huber}. 
+
+%  Essential for most computations in \name are the field operations and the solving of linear programs. For this the libraries \texttt{gmp} and \cite{gmp} and \texttt{cdd} \cite{cdd} are used. In the link proces the libraries are configured to do exact arithmetics. It is not possible to compile \name without these libraries installed.
+
+\end{abstract}
+\tableofcontents
+\newpage
+\normalsize
+\section{Introduction}
+ \name is a software package for computing \emph{Gr\"obner
+ fans}~\cite{MoRo} and \emph{tropical varieties}~\cite{tropgrass} of
+ polynomial ideals. It is an implementation of the algorithms
+ appearing in \cite{fukuda} and \cite{ctv}. These two papers are joint
+ work with Tristram Bogart, Komei Fukuda, David Speyer, Bernd
+ Sturmfels and Rekha Thomas. A combined presentation can be found
+ in~\cite{thesis}. For toric and lattice ideals, Gr\"obner fan programs
+ already existed: TiGERS~\cite{huber} and CaTS~\cite{cats}. \name
+ works on any ideal in $\Q[x_1,\dots,x_n]$.
+
+ Gfan is based on Buchberger's algorithm~\cite{Buch} and the local basis
+ change procedure~\cite{collart}. For traversal of Gr\"obner fans the simplex method, the reverse
+ search technique \cite{avis} and symmetry exploiting algorithms
+ are used. This allows enumeration of fans with millions of
+ cones. For tropical computations these methods have been developed further.
+
+\name has been used for studying the structure of the
+ Gr\"obner fan. Among the new results is an example of a Gr\"obner fan
+ which is not the normal fan of a polyhedron \cite{jensen}.
+
+The software is intended to be run in a UNIX style environment. In
+particular, the software works on GNU/Linux and on
+Mac OS X (with some effort).  Gfan uses the GNU multi-precision
+arithmetic library
+\cite{gmp} and cddlib \cite{cdd} for doing exact arithmetics and
+solving linear programming problems, respectively. A new feature of
+version 0.4 is the possibility to use the SoPlex \cite{wunderling}
+linear programming solver which does its computations in floating
+point arithmetics. \name verifies LP certificates in exact arithmetics
+and falls back on cddlib in case of a rounding error.
+
+The first section of this manual is a very short introduction to
+Gr\"obner fans and algorithms for computing them. The second section
+describes the installation procedure of the software and the third
+gives some examples of how to use it. Section \ref{sec:tropical}
+explains how Gfan can be used for computing tropical varieties,
+prevarieties and tropical bases. More details on the data formats and
+programs are given in Appendix \ref{sec:dataformats} and
+\ref{sec:applist}.
+
+{\bf Note for the reader:} As opposed to scientific journals the World
+Wide Web has the advantage that its contents can be changed after
+publication. If you have suggestions for improvements of this manual
+do not hesitate to let me know. Suggestions for the installation
+instructions are of particular interest since I only have access to /
+experience with a limited number of computer systems.
+
+
+\vspace{1cm}
+\noindent
+{\bf Acknowledgments:} The first version of this software was written
+in the fall 2003 during the authors visit to the Institute for
+Operations Research, ETH Z\"urich. Many features have been added since
+then. Rekha Thomas and Komei Fukuda have been involved in the
+development of the Gr\"obner fan algorithms, see the joint paper
+\cite{fukuda}. The tropical algorithms were developed in the joint
+paper \cite{ctv} with Tristram Bogart, David Speyer, Bernd Sturmfels
+and Rekha Thomas. The author is thankful to the following people and
+institutions for supporting the research: Komei Fukuda and Hans-Jakob
+L\"uthi (Institute for Operations Research, ETH Z\"urich), Douglas
+Lind and Rekha Thomas (University of Washington, Seattle) and the
+American Institute of Mathematics. In recent years the research has
+also been supported by University of Aarhus, University of Minnesota, TU-Berlin and the German Research Foundation (DFG) through the institutional strategy of Georg-August-Universit\"at G\"ottingen. The author would also like to thank his advisor Niels
+Lauritzen and the many people who have been testing, been using and helped improving the software.
+
+
+\subsection{The Gr\"obner fan of an ideal}
+The Gr\"obner fan of an ideal $I\subseteq k[x_1,\dots,x_n]$ in a polynomial ring over a field $k$ is a
+polyhedral complex consisting of cones in $\R^n$. 
+We provide a short definition and refer the reader to the papers mentioned above for details.
+\begin{definition}
+Let $\omega\in\R^n$ and $a\in\N^n$. We define $x^a:=x_1^{a_1}\cdots
+x_n^{a_n}$. The \emph{$\omega$-weight} of $\alpha x^a$ with
+$\alpha\in k\setminus\{0\}$ is $\omega\cdot a$. For $f\in
+k[x_1,\dots,x_n]$ we define its \emph{initial form} $\init_\omega(f)$ to be
+the sum of all terms in $f$ with maximal $\omega$-weight. For an ideal
+$I\subseteq k[x_1,\dots,x_n]$ we define the \emph{initial ideal} to be
+$\init_\omega(I):=\langle \init_\omega(f):f\in I\rangle$.
+\end{definition}
+Notice that initial ideals might not be monomial ideals. If for some
+$\omega\in\R_{>0}^n$ we have $\init_\omega(I)=I$ then we say that $I$
+is \emph{homogeneous} in the $\omega$-grading. We now fix the
+ideal $I\subseteq k[x_1,\dots,x_n]$ and consider the equivalence
+relation:
+$$u\sim v \Leftrightarrow \init_u(I)=\init_v(I)$$ on vectors $u,v\in
+\R^n$. If $I$ is homogeneous then any equivalence class contains a
+positive vector. Any equivalence class containing a positive vector is
+convex. Moreover, its closure is a polyhedral cone. We use the notation
+$$C_\omega(I):=\overline{\{u\in\R^n:\init_u(I)=\init_\omega(I)\}}$$
+to denote the closure of the equivalence class containing $\omega$.
+
+\begin{definition}\cite[Definition~2.8]{fukuda}
+\label{def:gfan}
+Let $I\subseteq k[x_1,\dots,x_n]$ be an ideal. The \emph{Gr\"obner fan} of
+$I$ is the collection of cones $C_\omega(I)$ where
+$\omega\in\R_{>0}^n$ together with all their non-empty faces.
+\end{definition}
+
+Any cone in the Gr\"obner fan is called a \emph{Gr\"obner cone}. The
+relative interior of any Gr\"obner cone is an equivalence class. The
+equivalence class containing $0$ is a subspace of $\R^n$ called
+the \emph{homogeneity space} of $I$.  The Gr\"obner fan is a
+polyhedral fan; see \cite{sturmfels} or
+\cite{fukuda}.  The \emph{support} of the Gr\"obner fan i.e. the union
+of its cones is called the \emph{Gr\"obner region} of $I$. If $I$ is
+homogeneous then the Gr\"obner region is $\R^n$ and, moreover, the
+Gr\"obner fan is the normal fan of the \emph{state polytope} of $I$; see
+\cite{sturmfels} for a construction of this polytope.
+The \emph{lineality space} of a polyhedral cone is defined as the
+largest subspace contained in the cone. The common lineality space of
+all cones in the Gr\"obner fan equals the homogeneity space of $I$.
+
+\begin{remark}
+Definition~\ref{def:gfan} was chosen since it gives the nicest
+Gr\"obner cones. In general our Gr\"obner fan does not coincide with
+the ``restricted'' Gr\"obner fan nor the ``extended'' Gr\"obner fan
+defined in \cite{MoRo}. The common refinement (i.e. ``intersection'')
+of $\R_{\geq 0}^n$ and our Gr\"obner fan is the restricted Gr\"obner
+fan. For homogeneous ideals our definition coincides with
+\cite[page~13]{sturmfels} (which only contains a definition for homogeneous
+ideals).
+\end{remark}
+
+\subsection{Gr\"obner bases}
+Given a \emph{term order} $\prec$ the \emph{initial term} $\init_\prec(f)$ of a
+polynomial $f$ is defined and, analogously to the $\omega$-initial
+ideal above, so is the \emph{initial ideal} $\init_\prec(I)$ of an ideal $I$.
+We remind the reader that given generators for and ideal $I\subseteq
+k[x_1,\dots,x_n]$ and a term order $\prec$ Buchberger's
+Algorithm produces a \emph{reduced} Gr\"obner basis
+$\G_\prec(I)$. This basis is unique. It is useful to introduce the
+notion of a \emph{marked} polynomial and a \emph{marked} reduced
+Gr\"obner basis. A polynomial is marked if one of its terms has been
+distinguished. When writing such a polynomial we may either underline
+the distinguished term or we may by convention write the distinguished
+term as the first one listed. Gfan uses this second convention. A
+Gr\"obner basis $\G_\prec(I)$ is marked if the initial term
+$\init_\prec(f)$ of every polynomial $f\in\G_\prec(I)$ has been marked
+i.e. distinguished.
+\begin{example}
+The polynomial ideal $I=\langle x+y\rangle\subseteq \Q[x,y]$ has two
+marked reduced Gr\"obner bases: $\{\underline{x}+y\}$ and
+$\{x+\underline{y}\}$. Gfan would write these Gr\"obner bases as
+$\{x+y\}$ and $\{y+x\}$.
+\end{example}
+By definition of Gr\"obner bases the initial ideal
+$\init_\prec(I)$ is easily read off from the marked (reduced)
+Gr\"obner basis $\G_\prec(I)$, namely, it is generated by the marked
+terms. In fact, for $I\subseteq k[x_1,\dots,x_n]$ fixed the follow
+three finite sets are in bijection:
+\begin{itemize}
+\item The set of marked reduced Gr\"obner bases for $I$.
+\item The set of monomial initial ideals $\init_\prec(I)$ with respect to term orders.
+\item The set of $n$-dimensional Gr\"obner cones in the Gr\"obner fan of $I$.
+\end{itemize}
+The map from the first set to the second set has already been
+described. A monomial ideal $\init_\prec(I)$ in the second set is
+mapped to $\overline{\{v\in\R^n:\init_v(I)=\init_\prec(I)\}}$ in the
+third set. Going from the first set to the third is easy, namely the
+inequalities can be read off from the exponents of the marked reduced
+Gr\"obner basis.
+% The monomial initial ideals (with respect to term
+%orders) of $I$ are in bijection with the marked reduced Gr\"obner
+%bases of $I$ and with the full dimensional cones in the Gr\"obner fan
+%of $I$. By a
+%\emph{marked Gr\"obner basis} we mean a set of polynomials which is a
+%Gr\"obner basis with respect to some term order with the initial term
+%of each polynomial, with respect to the term order, being
+%distinguished. We write the distinguished term as the first in the
+%list of terms when writing a polynomial. Knowing a marked reduced
+%Gr\"obner basis, its initial ideal and equations defining its
+%Gr\"obner cone are easily read off.
+Thus a useful way to represent the
+Gr\"obner fan of an ideal is by the set of its marked reduced Gr\"obner
+bases.
+%The original definition of the Gr\"obner fan was given in
+%\cite{MoRo}. Another reference is \cite{sturmfels}.
+
+%We need to be precise about which cones are computed. A full dimensional Gr\"obner cones of $I$ is a set of the form
+%$$C_\prec(I):=\overline{\{\omega\in\R^n:in_\omega(I)=in_\prec(I)\} }$$
+%where $\prec$ is a term order. The output of a Gr\"obner fan computation is the list of these full-dimensional cones as $\prec$ varies over all term orders. Each cone is represented by the reduced Gr\"obner basis of $I$ with respect to $\prec$. The reduced Gr\"obner basis is denoted by $\G_\prec(I)$.
+
+%If $I$ is a homogeneous ideal the full-dimensional Gr\"obner cones cover $\R^n$. If $I$ is not homogeneous this might not be the case. In any case the full-dimensional Gr\"obner cones cover $\R^n_{\geq 0}$.
+\subsection{Algorithmic background}
+We briefly describe the algorithms implemented in \name for computing Gr\"obner fans. The algorithms are divided into two parts, the local algorithms and the global algorithms. For more details we refer to \cite{fukuda} and \cite{symmetricfans}.
+\subsubsection{Local computations}
+There are two local computations that need to be done:
+\begin{itemize}
+\item Given a full-dimensional Gr\"obner cone by its reduced Gr\"obner basis, we need to find its facets. To be precise we need to find a normal for each facet.
+\item Given a full-dimensional Gr\"obner cone represented by its reduced Gr\"obner basis and a normal for one of its facets we need to compute the other full-dimensional cone having this facet as a facet (if one exists). Again, the computed cone should be represented by a reduced Gr\"obner basis.
+\end{itemize}
+To do the first computation we need the following theorem telling us how to read of the cone inequalities from the reduced Gr\"obner basis:
+\begin{theorem}
+Let $\G_\prec(I)$ be a reduced Gr\"obner basis. For any vector $u\in\R^n$
+$$\init_u(I)=\init_\prec(I) \Leftrightarrow \forall g\in\G_\prec(I):\init_u(g)=\init_\prec(g)$$
+\end{theorem}
+Each $g$ introduces a set of strict linear inequalities on $u$.
+By making these inequalities non-strict we get a description of the closed Gr\"obner cone of $\G_\prec(I)$.
+This gives us a list of possible facet normals of the cone. Linear programming techniques are now applied to find the true set of normals among these.
+
+Suppose we know a reduced Gr\"obner basis $\G_\prec(I)$ and a normal of one of its facets. If $\omega$ is a vector in the relative interior of the facet we can compute a Gr\"obner basis of $\init_\omega(I)$ with respect to $\prec$ by picking out a certain subset of the terms in $\G_\prec(I)$, see \cite[Corollary 1.9]{sturmfels}. The initial ideal $\init_\omega(I)$ has at most two reduced Gr\"obner bases since it is homogeneous with respect to any grading given by vectors in the $n-1$ dimensional subspace spanned by the facet. The other Gr\"obner basis of $\init_\omega(I)$ can be computed using a term order represented by the outer normal of the facet. A lifting step will take the Gr\"obner basis for $\init_\omega(I)$ to a Gr\"obner basis for $I$ representing the neighbouring cone. See \cite[Subroutine 3.7]{sturmfels}. The method described above is the local change procedure due to \cite{collart}. The procedure simplifies in our case since:
+\begin{itemize}
+\item We only walk through facets. Thus, the ideal $\init_\omega(I)$ has at most two reduced Gr\"obner bases.
+\item We know the facet normal. Thus, there is no reason for computing $\omega$.
+\end{itemize}
+\subsubsection{Global computations}
+\label{subsec:global computations}
+We define the graph $G$ whose set of vertices consists of all reduced Gr\"obner bases of $I$ with two bases being connected if their cones share a common facet containing a strictly positive vector. With the two subroutines in the previous section it is easy to do a traditional vertex enumeration of $G$ starting from some reduced Gr\"obner basis. However, for such algorithm to work it would need to store the boundary of the already enumerated vertices to guarantee that we do not enumerate the same vertex more than ones. For a planar graph this might not seem too bad but as the dimension grows the boundary can contain a huge number of elements. Storing these elements would require a lot of memory and sometimes more memory than the size of the computers RAM which would cause the computation to slow down.
+
+A better way to do the enumeration is by the reverse search strategy \cite{avis}. If there is an easy rule for orienting the edges of a graph so that it has a unique sink and no cycles it is also easy to find a spanning tree for the graph. The reverse search will traverse this spanning tree. The method works well for enumerating vertices of polytopes since an orientation of the edges with respect to a generic vector will have a unique sink and no cycles. A proof in \cite{fukuda} shows that a similar orientation orienting $G$ with respect to a term order will also give an acyclic orientation with a unique sink and thus allow enumeration by reverse search. Reverse search is the default enumeration method in \name.
+
+If the ideal is symmetric we may want to do the Gr\"obner basis enumeration up to symmetry. For example the ideal $I=\langle a-b\rangle\subseteq k[a,b]$ is invariant under the exchange of $a$ and $b$. The ideal has two marked Gr\"obner bases $\{\underline{a}-b\}$ and $\{\underline{b}-a\}$, each defining a full dimensional Gr\"obner cone in $\R^2$. Up to symmetry they are equal. We only want to compute one of them. In general $I\subseteq k[x_1,\dots,x_n]$ is invariant under all permutations of some subgroup ${\bf G}\subseteq S_n$. Applying a permutation in ${\bf G}$ to a marked reduced Gr\"obner basis of $I$ we get another marked reduced Gr\"obner basis of $I$. Hence, ${\bf G}$ acts on the set of marked reduced Gr\"obner bases of $I$. We wish to compute only one representative for each orbit. We apply techniques similar to the ones used in \cite{rambau} for computing regular triangulations of point configurations up to symmetry. Often the number of orbits is much smaller than the number of reduced Gr\"obner bases and we save a lot of time by not computing them all.
+
+
+\input{installation}
+
+\input{using}
+\input{tropical}
+
+\newpage
+\appendix
+\input{dataformats}
+\newpage
+\section{Application list}
+\label{sec:applist}
+This section contains the full list of programs in Gfan. For each program its help file is listed. The help file of a program can also be displayed by specifying the \texttt{--help} option when running the program. Besides the options listed in this section all programs have options {\bf -\hspace{0.013cm}-log1}, {\bf -\hspace{0.013cm}-log2},... which tell Gfan how much information to write to ``standard error'' while a computation is running. {\bf These options are VERY USEFUL when you wish to know if Gfan is making any progress in its computation.}
+
+Additional options which can be used for all programs, but which are not listed in the following subsections are:
+\begin{description}
+\item{\bf -\hspace{0.013cm}-stdin value} Specify a file to use as input instead of reading from the standard input.
+\item{\bf -\hspace{0.013cm}-stdout value} Specify a file to write output to instead of writing to the standard output.
+\item{\bf -\hspace{0.013cm}-xml} To let polyhedral fans be output in an XML format instead of in the text format. (The XML files are not readable by Gfan.)
+\end{description}
+\input{apptable.tex}
+
+\newpage
+\bibliographystyle {hplain}
+\bibliography{jensen.bib}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+\def\cprime{$'$}
+\begin{thebibliography}{10}
+
+\bibitem{4ti2}
+4ti2 team.
+\newblock 4ti2---a software package for algebraic, geometric and combinatorial
+  problems on linear spaces.
+\newblock {A}vailable at www.4ti2.de.
+
+\bibitem{allermannRau}
+Lars Allermann and Johannes Rau.
+\newblock First steps in tropical intersection theory.
+\newblock {\em Mathematische Zeitschrift}, 2009.
+
+\bibitem{avis}
+David Avis and Komei Fukuda.
+\newblock A basis enumeration algorithm for convex hulls and vertex enumeration
+  of arrangements and polyhedra.
+\newblock {\em Discrete Computational Geometry}, 8:295--313, 1992.
+
+\bibitem{bg}
+Robert Bieri and J.~R.~J. Groves.
+\newblock The geometry of the set of characters induced by valuations.
+\newblock {\em J. Reine Angew. Math.}, 347:168--195, 1984.
+
+\bibitem{ctv}
+T.~Bogart, A.~N. Jensen, D.~Speyer, B.~Sturmfels, and R.~R. Thomas.
+\newblock Computing tropical varieties.
+\newblock {\em J. Symbolic Comput.}, 42(1-2):54--73, 2007, math.AG/0507563.
+
+\bibitem{Buch}
+Bruno Buchberger.
+\newblock An algorithm for finding a basis for the residue class ring of a
+  zero-dimensional polynomial ideal, 1965.
+\newblock PhD-thesis (German).
+
+\bibitem{collart}
+S.~Collart, M.~Kalkbrener, and D.~Mall.
+\newblock Converting bases with the {G}r\"obner walk.
+\newblock {\em J. Symbolic Comput.}, 24(3-4):465--469, 1997.
+\newblock Computational algebra and number theory (London, 1993).
+
+\bibitem{cdd}
+Komei Fukuda.
+\newblock {\em cddlib reference manual, cddlib Version 094b}.
+\newblock ~Swiss Federal Institute of Technology, Lausanne and Z{\"u}rich,
+  Switzerland, 2005.
+\newblock \url{http://www.ifor.math.ethz.ch/~fukuda/cdd_home/cdd.html}.
+
+\bibitem{fukuda}
+Komei Fukuda, Anders Jensen, and Rekha Thomas.
+\newblock Computing {G}r{\"o}bner fans.
+\newblock {\em Mathematics of Computation, to appear}, 2007, math.AC/0509544.
+
+\bibitem{polymake}
+Ewgenij Gawrilow and Michael Joswig.
+\newblock polymake: a framework for analyzing convex polytopes.
+\newblock In Gil Kalai and G\"unter~M. Ziegler, editors, {\em Polytopes ---
+  Combinatorics and Computation}, pages 43--74. Birkh\"auser, 2000.
+
+\bibitem{gmp}
+Torbj{\"o}rn {Granlund et al.}
+\newblock {GNU} multiple precision arithmetic library 4.1.2, December 2002.
+\newblock \url{http://swox.com/gmp/}.
+
+\bibitem{huber}
+Birkett Huber and Rekha~R. Thomas.
+\newblock Computing {G}r{\"o}bner fans of toric ideals.
+\newblock {\em Experimental Mathematics}, 9(3/4):321--331, 2000.
+
+\bibitem{cats}
+Anders Jensen.
+\newblock {CaTS}, a software system for toric state polytopes.
+\newblock Available at {http://www.soopadoopa.dk/anders/cats/cats.html}.
+
+\bibitem{symmetricfans}
+Anders~N. Jensen.
+\newblock Traversing symmetric polyhedral fans.
+\newblock to appear in ``Mathe\-matical Software - ICMS 2010'', 2010.
+
+\bibitem{thesis}
+Anders~Nedergaard Jensen.
+\newblock {\em Algorithmic aspects of {G}r\"obner fans and tropical varieties}.
+\newblock PhD thesis, University of Aarhus, 2007.
+\newblock \url{http://www.imf.au.dk/publs?id=655}.
+
+\bibitem{jensen}
+Anders~Nedergaard Jensen.
+\newblock A non-regular {G}r\"obner fan.
+\newblock {\em Discrete Comput. Geom.}, 37(3):443--453, 2007, math.CO/0501352.
+
+\bibitem{lifting}
+Hannah Markwig, Thomas Markwig, and Anders Jensen.
+\newblock An algorithm for lifting points in a tropical variety.
+\newblock 2007, math.AG/0705.2441.
+
+\bibitem{MoRo}
+Teo Mora and Lorenzo Robbiano.
+\newblock The {G}r\"obner fan of an ideal.
+\newblock {\em J. Symbolic Comput.}, 6(2-3):183--208, 1988.
+\newblock Computational aspects of commutative algebra.
+
+\bibitem{rambau}
+J{\"o}rg Rambau.
+\newblock {TOPCOM}: Triangulations of point configurations and oriented
+  matroids.
+\newblock {\em ZIB report}, 02-17, 2002.
+
+\bibitem{tropgrass}
+David Speyer and Bernd Sturmfels.
+\newblock The tropical {G}rassmannian.
+\newblock {\em Adv. Geom.}, 4(3):389--411, 2004, math.AG/0304218.
+
+\bibitem{sturmfels}
+Bernd Sturmfels.
+\newblock {\em Gr\"obner bases and convex polytopes}, volume~8 of {\em
+  University Lecture Series}.
+\newblock American Mathematical Society, Providence, RI, 1996.
+
+\bibitem{sturmfelssolving}
+Bernd Sturmfels.
+\newblock {\em Solving systems of polynomial equations}, volume~97 of {\em CBMS
+  Regional Conference Series in Mathematics}.
+\newblock Published for the Conference Board of the Mathematical Sciences,
+  Washington, DC, 2002.
+
+\bibitem{wunderling}
+Roland Wunderling.
+\newblock {\em Paralleler und objektorientierter {S}implex-{A}lgorithmus}.
+\newblock PhD thesis, Technische Universit{\"a}t Berlin, 1996.
+\newblock \url{http://www.zib.de/Publications/abstracts/TR-96-09/}.
+
+\end{thebibliography}

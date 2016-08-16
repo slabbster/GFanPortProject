@@ -1,0 +1,2 @@
+%s --symmetry -e | %s _topolyhedralfan --symmetry | grep F_VECTOR -A1
+

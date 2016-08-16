@@ -1,0 +1,1 @@
+%s <input | %s _topolyhedralfan |grep F_VECTOR

@@ -1,0 +1,1 @@
+%s _initialforms --ideal --pair | %s _tropicaltraverse | grep F_VECTOR -A1

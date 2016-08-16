@@ -1,0 +1,186 @@
+<html><head><title>Gfan</title></head>
+
+
+<body>
+
+
+<center><h1>The Gfan Homepage</h1></center>
+<center>Software package written by Anders Nedergaard Jensen</center>
+<center><img src="email4.png"></center><br>
+
+<center>
+<table width="50%">
+<tbody><tr>
+<td>
+<br>
+<center>
+<b>Abstract</b>
+</center>
+<br>
+  Gfan is a software package for computing Gr&#246;bner fans and
+  tropical varieties. These are polyhedral fans associated to
+  polynomial ideals. The maximal cones of a Gr&#246;bner fan are in
+  bijection with the marked reduced Gr&#246;bner bases of its defining
+  ideal. The software computes all marked reduced Gr&#246;bner bases of an ideal. Their
+  union is a universal Gr&#246;bner basis. The tropical
+  variety of a polynomial ideal is a certain subcomplex of the
+  Gr&#246;bner fan. Gfan contains algorithms for computing this complex
+  for general ideals and specialized algorithms for tropical curves,
+  tropical hypersurfaces and tropical varieties of prime ideals.  In
+  addition to the above core functions the package contains many tools
+  which are useful in the study of Gr&#246;bner bases, initial ideals and
+  tropical geometry.  The full
+  list of commands can be found in Appendix B of the manual.  For
+  ordinary Gr&#246;bner basis computations Gfan is not competitive in
+  speed compared to programs such as CoCoA, Singular and Macaulay2.
+
+
+<br><br>
+</td>
+</tr>
+</tbody></table>
+</center>
+
+<br>
+<center>
+<table width="67%">
+<tbody><tr>
+<td>
+If you do not know what Gfan is you can read an old presentation of it in <a href="presentation.pdf">pdf-format</a> or in <a href="presentation.pdf"> postscript-format</a>.
+If you would like to know more please consult the manual below.
+<a href="http://www.soopadoopa.dk/anders/cats/cats.html">CaTS</a> is another program for computing Gr&#246;bner fans working for toric and lattice ideals only.
+</td>
+</tr>
+</tbody></table>
+</center>
+
+<center>
+<table width="80%">
+<tbody><tr>
+<td>
+
+<h2>Manual</h2>
+The manual is available as a <a href="gfanmanual0.5.pdf">pdf-file</a> and as a <a href="gfanmanual0.5.ps"> postscript-file</a>.
+<h2>Installation</h2>
+Please follow the installation instructions given in Section 2 of the manual linked to above. Alternatively, go to the <a href="binaries.html">binaries page</a> where you will find precompiled binaries for a small collection of operating systems. On Gentoo Linux it is even easier: Gfan can be installed using the command <pre>sudo emerge gfan</pre>. On other Linux distributions <pre>sudo apt-get install gfan</pre> might work.
+<h2>Download</h2>
+<ul>
+<li> <a href="gfan0.5.tar.gz">Gfan version 0.5</a> (January 23th 2011, major update, Gr&#246;bner bases/fans over the integers (experimental), p-adic Gr&#246;bner bases/complexes (experimental), fan homology computations, exporting of fans in Polymake's new xml format, performance improvements (gfan is now faster than TOPCOM for secondary fan computations) and much more.) Updated January 25th 2011 (xml format and installation instructions).
+</li>
+<li> <a href="gfan0.4plus.tar.gz">Gfan version 0.4plus</a> (October 20 2009, same as version 0.4, but with three bugs fixed. Update to this version if you are working with tropical multiplicities)
+</li>
+<li> <a href="gfan0.4.tar.gz">Gfan version 0.4</a> (May 31 2009, major update, performance improvements for polyhedral computations, possibility to link to the SoPlex LP library, computation of secondary fans, links, toric ideals, lattice ideals, and tropical Weil-divisors, symmetry is now exploitable for tropical hypersurface intersections)
+</li>
+<li> <a href="gfan0.3.tar.gz">Gfan version 0.3</a> (October 12 2007, major update, some programs have changed behaviour, a new Polymake compatible format for polyhedral fans and polyhedral cones is supported, free choice of variable names)
+</li>
+<li> <a href="gfan0.2.2.tar.gz">Gfan version 0.2.2</a> (July 24 2006, changes in installation script, bug fixes for non-homogeneous ideals in and xfig output, GPL license)
+</li>
+<li> <a href="gfan0.2.1.tar.gz">Gfan version 0.2.1</a> (February 5 2006, support for Z/pZ as coefficient field added)
+</li>
+<li> <a href="gfan0.2.tar.gz">Gfan version 0.2</a> (October 12 2005)
+</li>
+<li> <a href="gfan0.1.tar.gz">Gfan version 0.1</a> (April 8 2005)
+</li>
+</ul>
+
+<h2>Citations</h2>
+
+<pre>
+@Misc{gfan,
+     author = {Jensen, Anders N.},
+     title = {{G}fan, a software system for {G}r{\"o}bner fans and tropical varieties},
+     howpublished = {Available at \url{http://www.math.tu-berlin.de/~jensen/software/gfan/gfan.html}}
+} 
+</pre>
+
+<h2>References</h2>
+<code>
+</code><ul>
+
+<li>
+David Avis and Komei Fukuda.
+A basis enumeration algorithm for convex hulls and vertex enumeration
+  of arrangements and polyhedra.
+<it>Discrete Computational Geometry</it>, 8:295--313, 1992.
+</li>
+
+<li>
+Tristram Bogart, Anders Jensen, David Speyer, Bernd Sturmfels, and Rekha Thomas.
+Computing tropical varieties.
+2005.
+<a href="http://arxiv.org/abs/math.AG/0507563">math.AG/0507563</a>.
+</li>
+
+<li>
+St&#233;phane Collart, Michael Kalkbrener, and Daniel Mall.
+Converting bases with the Gr&#246;bner walk.
+<it>J. Symb. Comput.</it>, 24(3/4):465--469, 1997.
+</li>
+
+<li>
+Komei Fukuda.
+<it> cddlib reference manual, cddlib Version 093b</it>.
+Swiss Federal Institute of Technology, Lausanne and Z&#252;rich,
+  Switzerland, 2003.
+<a href="http://www.ifor.math.ethz.ch/~fukuda/cdd_home/cdd.html"> http://www.ifor.math.ethz.ch/~fukuda/cdd_home/cdd.html </a>.
+</li>
+
+<li>
+Komei Fukuda, Anders Jensen, and Rekha Thomas.
+Computing Gr&#246;bner fans.
+2005.
+<a href="http://arxiv.org/abs/math.AC/0509544">math.AC/0509544</a>.
+</li>
+
+<li>
+Torbj&#246;rn Granlund et al.
+GNU multiple precision arithmetic library 4.1.2, December 2002.
+<a href="http://gmplib.org/">http://gmplib.org/</a>.
+</li>
+
+<li>
+Birkett Huber and Rekha R. Thomas.
+Computing Gr&#246;bner fans of toric ideals.
+<it> Experimental Mathematics</it>, 9(3/4):321--331, 2000.
+</li>
+
+<li>
+Anders Jensen.
+CaTS, a software system for toric state polytopes.
+Available at <a href="http://www.soopadoopa.dk/anders/cats/cats.html">http://www.soopadoopa.dk/anders/cats/cats.html</a>.
+</li>
+
+<li>
+Anders Jensen.
+A non-regular Gr&#246;bner fan.
+2005.
+<a href="http://arxiv.org/abs/math.CO/0501352">math.CO/0501352</a>.
+</li>
+
+<li>
+Teo Mora and Lorenzo Robbiano.
+The Gr&#246;bner fan of an ideal.
+<it>J. Symb. Comput.</it>, 6(2/3):183--208, 1988.
+</li>
+
+<li>
+J&#246;rg Rambau.
+<a href="http://www.uni-bayreuth.de/departments/wirtschaftsmathematik/rambau/TOPCOM/content.en.html">Topcom</a>: Triangulations of point configurations and oriented matroids.
+<it>ZIB report</it>, 02-17, 2002.
+</li>
+
+<li>
+Bernd Sturmfels.
+<it>Gr&#246;bner bases and Convex Polytopes</it>, volume 8 of
+<it>University Lecture Series</it>.
+American Mathematical Society, 1996.
+</li>
+</ul>
+  
+</td>
+</tr>
+</tbody></table>
+
+          
+
+</center></body></html>

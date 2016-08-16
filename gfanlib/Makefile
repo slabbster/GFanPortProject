@@ -1,0 +1,90 @@
+#################################################################
+###
+### Makefile for Singular
+###
+#################################################################
+
+SHELL		= /bin/sh
+
+##
+## various paths
+##
+srcdir		= .
+prefix 		= /usr/local
+exec_prefix 	= ${prefix}
+libdir 		= ${exec_prefix}/lib
+# includes are taken from here
+includedir	= ${prefix}/include
+
+##
+## various programs
+##
+
+CXX		= g++
+INSTALL		= @INSTALL@
+INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+INSTALL_DATA	= @INSTALL_DATA@
+MKINSTALLDIRS   = ../mkinstalldirs
+LN_S		= ln -s
+RANLIB 		= ranlib
+
+##
+## compiler and linker options
+##
+PIPE		= -pipe
+CFLAGS		= -g -O2 ${PIPE}
+CXXFLAGS	= -g -O2 ${PIPE}
+#CXXTEMPLFLAGS	= -fno-implicit-templates --no-exceptions
+CPPFLAGS	= -I${srcdir} -I${includedir}
+DEFS		= -DGMPRATIONAL
+
+## End configuration dependend stuff
+#################################################################
+
+###
+### file sets
+###
+
+# normal C++ source files
+CXXSOURCES= gfanlib_zcone.cpp gfanlib_symmetry.cpp gfanlib_symmetriccomplex.cpp gfanlib_polyhedralfan.cpp gfanlib_zfan.cpp gfanlib_polymakefile.cpp
+
+# normal C source files
+CSOURCES=
+
+SOURCES=${CSOURCES} ${CXXSOURCES}
+
+HEADERS=gfanlib_z.h gfanlib_q.h gfanlib_vector.h gfanlib_matrix.h gfanlib_zcone.h gfanlib.h gfanlib_polyhedralfan.h gfanlib_polymakefile.h gfanlib_symmetriccomplex.h gfanlib_zfan.h
+
+DISTFILES=${SOURCES} ${HEADERS}
+
+OBJS := $(CXXSOURCES:.cpp=.o) $(CSOURCES:.c=.o)
+
+.cpp.o:	
+	${CXX} ${CXXFLAGS} ${CPPFLAGS} ${DEFS} -c $<
+.c.o:
+	${CC} ${CFLAGS} ${CPPFLAGS} ${DEFS} -c $<
+
+libgfan.a: ${OBJS}
+	 -rm -f $@
+	 ar cr $@ $^
+
+all:  libgfan.a
+
+install: all
+	${MKINSTALLDIRS} ${includedir}
+	${MKINSTALLDIRS} ${libdir}
+	cp gfanlib*.h ${includedir}/
+	cp libgfan.a ${libdir}/libgfan.a
+	$(RANLIB) ${libdir}/libgfan.a
+
+##
+## clean targest
+##
+mostlyclean: 
+	-rm -f *.o *.og core *.op
+
+clean: mostlyclean
+	-rm -f *.bak *.d *.dd depend *.a *.so*
+
+tags:   
+	ctags *.c *.h *.cc *.inc

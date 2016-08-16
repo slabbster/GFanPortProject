@@ -1,0 +1,1 @@
+%s _tropicalhypersurface >temp1.poly ; %s _tropicalweildivisor -i1 temp1.poly -i2 func.poly > temp2.poly ; %s _tropicalweildivisor -i1 temp2.poly -i2 func.poly | grep MULTIPLICITIES -A1

@@ -1,0 +1,344 @@
+\newpage
+\section{Installation}
+\label{sec:installation}
+If you are using MacOS the easiest way to install Gfan is to use precompiled executables: go to the Gfan webpage, go to the binaries.html subpage, and follow the instructions there.
+
+If you are using Linux the following might work
+\begin{verbatim}
+sudo apt-get install gfan
+\end{verbatim}
+or
+\begin{verbatim}
+sudo emerge gfan
+\end{verbatim}
+depending on your distribution and package manager. If you succeed, it is good to know which version was installed. Run
+\begin{verbatim}
+gfan _version
+\end{verbatim} 
+Should this command fail, then you are using an old version of gfan.
+
+
+The rest of this section eplains how to install Gfan by compiling it from source on a Linux/Unix-like
+system with a modern version of gcc. \name has been compiled
+successfully with gcc version~4.1.1. {\bf Two libraries are needed in order
+to compile \name: {cddlib} and { gmp}.} Users of Microsoft
+Windows may be able to use these installation instructions if they
+first install Cygwin. A new feature in \name version 0.4 is the
+possibility to link to the SoPlex \cite{wunderling} library. This does
+not add to the functionality of \name but improves speed of the
+polyhedral computations. In an attempt to keep the installation instructions simple, instructions for how to use SoPlex are given in a separate section, Subsection \ref{subsec:soplex}. {\color{red} If you are a lucky Linux user it will suffice to follow the red part of these instructions.}
+
+\subsection{Installation of the gmp library}
+GMP stands for GNU Multi Precision arithmetic library. This library
+must be installed on your system before you can install cddlib and
+gfan.
+%With the
+%current {\tt Makefile} of \name gmp must have been installed by the
+%root superuser.
+{\color{red}
+{\bf On \sout{most} some GNU/Linux systems the library is already installed.}}
+%\name can be compiled with gmp version 4.1.2.
+If your system does not already
+have gmp installed (which is the case if you have a usual Mac OS X
+installation) follow the directions in this section.
+
+\vspace{0.3cm}
+IF YOU ARE USING Mac OS X AND YOU ARE NOT AN EXPERT FOLLOW THE INSTRUCTIONS IN SECTION~\ref{sec:fink} INSTEAD.
+
+\vspace{0.3cm}
+\noindent
+Make a new directory and download {\tt gmp-4.2.2.tar.gz} from
+
+\centerline{\tt http://gmplib.org/}
+
+\noindent
+for example by typing
+\begin{verbatim}
+cd ~
+mkdir tempdir
+cd tempdir
+wget http://ftp.sunet.se/pub/gnu/gmp/gmp-4.2.2.tar.gz
+\end{verbatim}
+Extract the file and go to the thereby created directory:
+\begin{verbatim}
+tar -xzvf gmp-4.2.2.tar.gz
+cd gmp-4.2.2
+\end{verbatim}
+Run the configure script and specify the installation directory:
+\begin{verbatim}
+./configure --prefix=$HOME/gfan/gmp
+\end{verbatim}
+%$
+The above line specifies the installation directory which in this case
+will be the folder {\tt gfan/gmp} in your home directory. If you already have
+a directory by that name its content may be destroyed by the subsequent commands.
+
+Compile the gmp library and install it:
+\begin{verbatim}
+make
+make install
+\end{verbatim}
+Finally, a very important step when working with gmp: Let the program
+perform a self-test:
+\begin{verbatim}
+make check
+\end{verbatim}
+The gmp installation is now complete. The gmp files can be found in your
+home directory under {\tt gfan/gmp}.
+
+\subsubsection{Installing the gmp library on Mac OS X using fink}
+\label{sec:fink}
+Current versions of Mac OS X and the gmp library have a compatibility
+problem causing gmp to be compiled with errors if compiled without
+modifications. There exist packages of gmp for Mac OS X on the internet
+which have been compiled incorrectly. We recommend that Mac OS users
+use the packages provided by fink.
+
+\vspace{0.3cm}
+
+\noindent
+Install fink by following the instructions given on the page
+
+\centerline{\tt http://www.finkproject.org/download/index.php?phpLang=en}
+
+\noindent
+Having installed fink now simply type
+\begin{verbatim}
+fink install gmp
+\end{verbatim}
+The gmp library is now installed in the directory {\tt /sw}.
+
+\subsection{Installation of the cddlib library}
+Cddlib \cite{cdd} is a library for doing exact polyhedral
+computations, including solving linear programming problems. \name can
+be compiled with cddlib version 094. Older versions of cddlib will not
+work with \name version 0.2 or later.
+% The library can be installed
+%anywhere in the file system, so superuser access is not needed.
+Notice that cddlib itself needs gmp to compile. We give
+instructions on how to install cddlib.
+% If this does not work have a look in the cddlib manual.
+
+\vspace{0.3cm}
+
+\noindent
+\color{red}
+Make a directory for the compilation process if you did not do that already:
+\begin{verbatim}
+cd ~
+mkdir tempdir
+cd tempdir
+\end{verbatim}
+
+\noindent
+Download the file {\tt cddlib-094f.tar.gz} from
+\begin{verbatim}
+http://www.ifor.math.ethz.ch/~fukuda/cdd_home/cdd.html
+\end{verbatim}
+% http://www.cs.mcgill.ca/~fukuda/soft/cdd_home/cdd.html
+into that directory.
+Decompress the file and change directory to the directory being created:
+\begin{verbatim}
+tar -xzvf cddlib-094f.tar.gz
+cd cddlib-094f
+\end{verbatim}
+Run the configure script. \color{black} Here you have the chance of telling cddlib where to find gmp and where to install itself.
+\begin{verbatim}
+./configure --prefix="$HOME/gfan/cddlib"
+      CFLAGS="-I$HOME/gfan/gmp/include -L$HOME/gfan/gmp/lib"
+\end{verbatim}
+%$
+(On a single line).
+The above options say that cddlib should be installed in your home directory under {\tt gfan/cddlib} and where to look for gmp. If gmp was installed by fink (see Section~\ref{sec:fink}) you should run
+\begin{verbatim}
+./configure --prefix="$HOME/gfan/cddlib"
+      CFLAGS="-I/sw/include -L/sw/lib"
+\end{verbatim}
+instead. {\bf If gmp was already installed on your system in its default location run}
+\color{red}
+\begin{verbatim}
+./configure --prefix="$HOME/gfan/cddlib"
+\end{verbatim}
+\color{black}
+%$
+The content of {\tt gfan/cddlib} might be destroyed by the subsequent commands.
+Compile and install cddlib:
+\color{red}
+\begin{verbatim}
+make
+make install
+\end{verbatim}
+\color{black}
+You can now find the installed cddlib library files in your home directory under {\tt gfan/cddlib}.
+
+\noindent
+If you had super user access you could also just have run
+\begin{verbatim}
+./configure
+\end{verbatim}
+when you configured cddlib. This would cause cddlib to be installed in its default place.
+
+\subsection{\name installation}
+\label{subsec:installation}
+\color{red}
+Download the file {\tt \nameversion .tar.gz} from the \name
+homepage located at:
+% \centerline{\tt http://www.soopadoopa.dk/anders/gfan/gfan.html.}
+% \centerline{\tt http://home.imf.au.dk/ajensen/software/gfan/gfan.html}
+\begin{verbatim}
+http://www.math.tu-berlin.de/~jensen/software/gfan/gfan.html
+\end{verbatim}
+to your folder {\texttt tempdir}.
+\noindent
+Extract the file and enter the new directory by typing
+\begin{alltt}
+cd ~
+cd tempdir
+tar -xzvf \nameversion.tar.gz
+cd \nameversion
+\end{alltt}
+\color{black}
+Gfan does not have a configure script, so you tell Gfan where to find gmp and cdd when you compile the program. For example you should type
+\begin{verbatim}
+make
+\end{verbatim}
+or
+
+\color{red}
+\begin{verbatim}
+make cddpath=$HOME/gfan/cddlib
+\end{verbatim}
+\color{black}
+%$
+or
+\begin{verbatim}
+make cddpath=$HOME/gfan/cddlib gmppath=$HOME/gfan/gmp
+\end{verbatim}
+%$
+or
+\begin{verbatim}
+make cddpath=$HOME/gfan/cddlib gmppath=/sw
+\end{verbatim}
+%$
+depending on where you installed the libraries to compile the program.
+
+The final step is to install the compiled program. Type
+\color{red}
+\begin{verbatim}
+make PREFIX=$HOME/gfan install
+\end{verbatim}
+%$
+\color{black}or
+\begin{verbatim}
+make install
+\end{verbatim}
+depending on where you want Gfan installed. (The second line attempts to install it in {\tt /usr/local} by default). If you chose to install in
+the directory {\tt gfan} in your home folder \color{red}you will now find the
+file {\tt gfan} in the subdirectory {\tt gfan/bin} of your home folder together with a set of symbolic links\color{black},
+for example {\tt gfan\_buchberger}.
+You can go to the subdirectory and type {\tt ./\exename{} --help} and {\tt ./\exename{}\_buchberger --help} in
+the shell to test them. Or you can ask Gfan to compute the reduced Gr\"obner bases of an ideal by typing
+\begin{alltt}
+./\exename{}\_bases
+\end{alltt}
+followed by, for example,
+\begin{verbatim}
+Q[a,b,c]
+{a^3+b^2c-a,c^2-2/3b}
+\end{verbatim}
+\begin{remark}
+If for some reason you did get {\tt gfan} compiled but did not get the symbolic links made like {\tt gfan\_buchberger} you can still run that program by typing {\tt gfan \_buchberger} instead of {\tt gfan\_buchberger}.
+\end{remark}
+
+
+\subsection{SoPlex (for the advanced user only)}
+\label{subsec:soplex}
+Linking Gfan to SoPlex can lead to huge performance
+improvements. Notice however, that the strict license of SoPlex
+propagates through the software to your paper, requiring that you cite
+SoPlex appropriately if you choose to publish results based on SoPlex.
+Furthermore, with the standard SoPlex license you are only allowed to
+use SoPlex for non-commercial, academic work.
+
+Download SoPlex here (version 1.3.2 has been used successfully):
+\begin{verbatim}
+http://soplex.zib.de/download.shtml
+\end{verbatim}
+After download, follow the installation instructions
+\begin{verbatim}
+http://www.zib.de/Optimization/Software/Soplex/html/INST.html
+\end{verbatim}
+After having installed SoPlex, you must tell \name where SoPlex is located. Do this by editing the lines
+\begin{footnotesize}
+\begin{verbatim}
+SOPLEX_PATH = $(HOME)/math/software/soplex-1.3.2
+SOPLEX_LINKOPTIONS = -lz $(SOPLEX_PATH)/lib/libsoplex.darwin.x86.gnu.opt.a
+\end{verbatim}
+\end{footnotesize}
+of the file \texttt{Makefile} in your \name directory.  Most likely
+you need to change \texttt{darwin} to \texttt{linux} in the last line.
+Finally you need to recompile \name. First run \texttt{make clean} and
+then \texttt{make} with the options from
+Subsection~\ref{subsec:installation} together with the
+option \texttt{soplex=true}. Then do a \texttt{make install} as
+described in Subsection~\ref{subsec:installation}.
+
+%Please keep on reading --- in the next section we will see how to install all the additional \name programs.
+
+%\subsection{Installation to invoke additional features}
+%If you have root access to the system it is recommended that you type
+%\begin{verbatim}
+%make install
+%\end{verbatim}
+%in your shell after having compiled \name. This will copy the file {\tt \exename} to the directory {\tt /usr/local/bin} and \name will now be accessible from any directory and by any user by typing
+%\begin{alltt}
+%\exename
+%\end{alltt} 
+%The {\tt make install} step above also creates symbolic links for the additional programs included in \name (like {\tt \exename \_buchberger} or {\tt \exename \_render}). If you chose not to run {\tt make install} you can install the additional programs in \name by typing
+%\begin{alltt}
+%./\exename installlinks
+%\end{alltt}
+%This will create a set of symbolic links to {\tt \exename} in the current directory. Invoking {\tt \exename} with one of these new names will have a different meaning. For example you may use {\tt \exename \_buchberger} to compute a single Gr\"obner basis. These programs have a help file which can be displayed by invoking the programs with the option {\tt --help}. The contents of the help files are also listed in Section \ref{sec:applist}.
+
+
+
+%\subsection{MacOS}
+
+%\subsubsection{Installing gmp from source}
+
+
+%\subsubsection{Installing with fink}
+%\begin{description}
+%\item{gmp} dgdgdfdg
+
+%\item{cddlib}
+%Download the file {\tt cddlib-094b.tar.gz} from
+%\begin{verbatim}
+%http://www.cs.mcgill.ca/~fukuda/soft/cdd_home/cdd.html
+%\end{verbatim}
+%into a directory. Decompress the file using {\tt gzip -d
+%  cddlib-094b.tar.gz} and extract the tar archive using {\tt tar -xvf
+%  cddlib-094b.tar}. Change directory to the newly created directory
+%{\tt cddlib-094b} and run
+%\begin{verbatim}
+%./configure --prefix="$HOME/cddlib" CFLAGS="-I/sw/include -L/sw/lib"
+%\end{verbatim}
+%When the following command is run the directory ``cddlib'' is created in your home directory. If it already exists the directory is destroyed.
+%\begin{verbatim}
+%make install
+%\end{verbatim}
+%\end{description}
+
+
+
+%\begin{center} 
+%  {\bf The complete list of functionalities available in CaTS and the
+%    programs they need are listed at the end of the manual.}
+%\end{center}
+
+
+
+
+
+
+

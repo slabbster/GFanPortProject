@@ -1,0 +1,1 @@
+%s _tropicalweildivisor -i1 input -i2 func.poly > temp.poly | %s _tropicalweildivisor -i1 temp.poly -i2 func.poly | grep MULTIPLICITIES -A1

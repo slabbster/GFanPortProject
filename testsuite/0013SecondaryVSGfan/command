@@ -1,0 +1,1 @@
+%s _transposematrix | %s _latticeideal -t | %s | %s _topolyhedralfan | grep F_VECTOR -A1
